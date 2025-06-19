@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pay.flitt.com/api/checkout/url
+    body:
+      encoding: UTF-8
+      string: '{"request":{"server_callback_url":"http://myshop/callback/","order_id":"ByteTestOrder207","currency":"USD","merchant_id":1549901,"order_desc":"Test
+        payment","amount":1000,"signature":"54cb2dc70bf20be6eab9216a2802fb9c2739b1ac"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      date:
+      - Thu, 19 Jun 2025 21:03:24 GMT
+      set-cookie:
+      - cipspsession=AgAAwGhUexwPHdorQyHqAg==; expires=Sun, 29-Jun-25 21:03:24 GMT;
+        path=/; HttpOnly; secure
+      content-encoding:
+      - gzip
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      x-xss-protection:
+      - '1'
+      x-content-type-options:
+      - nosniff
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 40fefb39662990e7613aeb1401eaf50a.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - OTP50-P2
+      x-amz-cf-id:
+      - 02t8xzhAHpRiGfSg_Sihq3nSOfaCvNdoggijqHV9AnXuYDqxu5WQvQ==
+    body:
+      encoding: UTF-8
+      string: '{"response": {"checkout_url": "https://pay.flitt.com/merchants/6aa79957f6f8336b820e6c82b7634f0c/default/index.html?token=abb4517911ccb496b3a175df8ecb040d48d0cfb4",
+        "payment_id": "939734940", "response_status": "success"}}'
+  recorded_at: Thu, 19 Jun 2025 21:03:24 GMT
+recorded_with: VCR 6.3.1
