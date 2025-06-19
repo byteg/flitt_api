@@ -16,11 +16,11 @@ require 'flitt_api'
 client = FlittAPI::Client.new(secret_key: 'your-secret-key', merchant_id: 123)
 
 # Create a payment
-checkout = clientgenerate_checkout_url(amount: 1000,
-                                       currency: 'USD',
-                                       order_id: 'MyFirstOrder',
-                                       order_desc: 'Test payment',
-                                       server_callback_url: 'http://myshop/callback/')
+checkout = client.generate_checkout_url(amount: 1000,
+                                        currency: 'USD',
+                                        order_id: 'MyFirstOrder',
+                                        order_desc: 'Test payment',
+                                        server_callback_url: 'http://myshop/callback/')
 checkout['checkout_url'] # redirect user to this URL to make a payment
 ```
 
