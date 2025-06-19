@@ -13,16 +13,15 @@ gem install flitt_api
 ```ruby
 require 'flitt_api'
 
-client = FlittAPI::Client.new(api_key: 'your-secret-key')
+client = FlittAPI::Client.new(secret_key: 'your-secret-key', merchant_id: 123)
 
 # Create a payment
-payment = client.create_payment(amount: 1000, currency: 'USD', customer_id: 'cus_123')
-
-# Retrieve a payment
-payment = client.get_payment(payment["id"])
-
-# List all payments
-payments = client.list_payments
+checkout = clientgenerate_checkout_url(amount: 1000,
+                                       currency: 'USD',
+                                       order_id: 'MyFirstOrder',
+                                       order_desc: 'Test payment',
+                                       server_callback_url: 'http://myshop/callback/')
+checkout['checkout_url'] # redirect user to this URL to make a payment
 ```
 
 ## Running Tests
