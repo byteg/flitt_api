@@ -13,7 +13,7 @@ gem install flitt_api
 ```ruby
 require 'flitt_api'
 
-client = FlittAPI::Client.new(secret_key: 'your-secret-key', merchant_id: 123)
+client = FlittAPI::Client.new(secret_key: 'test', merchant_id: 1549901) # test merchant data
 
 # Create a payment
 checkout = client.generate_checkout_url(amount: 1000,
