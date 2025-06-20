@@ -5,7 +5,7 @@ require 'json'
 
 module FlittAPI
   class Client
-    API_BASE = 'https://pay.flitt.com/api'
+    API_BASE = 'https://pay.flitt.com'
 
     attr_reader :merchant_id, :secret_key, :conn
 
