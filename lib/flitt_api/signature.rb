@@ -12,7 +12,10 @@ module FlittAPI
     private
 
     def generate_signature_string
-      sorted_params = @params.except('signature', :signature).keys.sort.map { |key| @params[key].to_s }.filter { |value| value != nil && value != '' }.join('|')
+      sorted_params = @params.except('signature',
+                                     :signature,
+                                     'response_signature_string',
+                                     :response_signature_string).keys.sort.map { |key| @params[key].to_s }.filter { |value| value != nil && value != '' }.join('|')
       "#{@secret_key}|#{sorted_params}"
     end
   end
